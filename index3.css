@@ -1,0 +1,144 @@
+
+/* -------------------------------------Special Styling */
+/* Added to prevent the problems of elements overflowing horizontally on mobile devices */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Castoro', serif;
+}
+
+.row,
+.container-fluid {
+        overflow-x: hidden;
+}
+
+/* Background Image */
+
+
+body {
+    text-align: center;
+    background-image: url(https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+
+#clockd{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around ;
+    align-items: center;
+}
+/*MAIN BODY STYLING */
+/*Clock Canvas */
+
+#clockCanvas {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 10vh auto 0 auto;
+}
+
+/* -------------------------------------Bell Icon */
+
+#alarmBell {
+    font-size: 50px;
+    width: 100%;
+    height: auto;
+    margin: 2vh auto;
+    color:white;
+  }
+
+.bell-icon-shake {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+/* (A) SHARED */
+#ctime *, #tpick * {
+  font-family: Impact, sans-serif;
+  box-sizing: border-box;
+  text-align: center;
+}
+#ctime, #tpick, .square { padding: 10px; }
+#ctime, #tpick {
+  margin: 0 auto;
+  max-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header {
+  font-weight: normal;
+  width: 100%;
+  margin: 10px 0;
+}
+.square, #tpick-h, #tpick-m, #tpick-s { width: 33%; }
+.text, #tset, #treset { margin-top:10px; }
+.digits, .square select {
+  font-size: 24px;
+  background: #fff;
+  color: #000;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* (B) CURRENT TIME */
+#ctime { background: #000; }
+#ctime .header { color: #c61d1d; }
+#ctime .text { color: #ddd; }
+
+/* (C) TIME PICKER */
+#tpick { background: #f2f2f2; }
+#tset, #treset {
+  width: 50%;
+  background: #3368b2;
+  color: #fff;
+  border: 0;
+  padding: 15px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+#tset:disabled, #treset:disabled {
+  background: #aaa;
+  color: #888;
+}
+
+
+
+/*Accordion cards*/
+
+/*Media Queries */
+/*Responsive Design - mobile */
+
+@media only screen and (max-width: 578px) {
+    #clockCanvas {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        max-height: 500px;
+        margin: 20px auto 0 auto;
+    }
+    #clockd{
+        display: flex;
+        flex-direction: column;
+    }
+}
